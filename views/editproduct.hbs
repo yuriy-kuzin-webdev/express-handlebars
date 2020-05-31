@@ -1,0 +1,36 @@
+<h1>Редактирование {{prod.title}}</h1>
+
+<div class="row">
+    <form class="col s12" action="/products/edit" method="POST">
+        <div class="row">
+            <div class="input-field col s12">
+                <input id="title" type="text" name="title" class="validate" required
+                value="{{prod.title}}">
+                <label for="title">Название товара</label>
+                <span class="helper-text" data-error="Введите название товара"></span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <input id="price" type="text" name="price" class="validate" required
+                value="{{prod.price}}">
+                <label for="price">Цена</label>
+                <span class="helper-text" data-error="Укажите стоимость"></span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <input id="img" type="text" name="img" class="validate" required
+                value="{{prod.img}}">
+                <label for="img">URL изображения</label>
+                <span class="helper-text" data-error="Предоставте URL изображения"></span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <input type="hidden" name="id" value="{{prod.id}}">
+                <button class="btn">Сохранить изменения</button>
+            </div>
+        </div>
+    </form>
+</div>
