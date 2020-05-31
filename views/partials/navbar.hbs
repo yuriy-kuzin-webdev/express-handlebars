@@ -2,10 +2,10 @@
     <div class="nav-wrapper">
       <a href="#" class="brand-logo">Logo</a>
       <ul id="nav-mobile" class="right hide-on-med-and-down">
-        <li><a href="/">Главная</a></li>
-        <li><a href="/products">Товары</a></li>
-        <li><a href="/addproduct">Добавить товар</a></li>
-        <li><a href="/about">О нас</a></li>
+        <li {{#if isHome}}      class="active" {{/if}}><a href="/">Главная</a></li>
+        <li {{#if isProducts}}  class="active" {{/if}}><a href="/products">Товары</a></li>
+        <li {{#if isAddProduct}}class="active" {{/if}}><a href="/addproduct">Добавить товар</a></li>
+        <li {{#if isAbout}}     class="active" {{/if}}><a href="/about">О нас</a></li>
       </ul>
     </div>
   </nav>

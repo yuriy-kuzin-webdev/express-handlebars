@@ -18,25 +18,29 @@ app.set('views', 'views');
 
 app.get('/', (req,res)=>{
     res.render('index', {
-        title   :   'Главная страница'
+        title       :   'Главная страница',
+        isHome      :   true
     })
 });
 
 app.get('/products', (req,res)=>{
     res.render('products', {
-        title   :   'Товары'
+        title       :   'Товары',
+        isProducts  :   true
     })
 });
 
 app.get('/addproduct', (req,res)=>{
     res.render('addproduct', {
-        title   :   'Добавление товара'
+        title       :   'Добавление товара',
+        isAddProduct:   true
     })
 });
 
 app.get('/about', (req,res)=>{
     res.render('about', {
-        title   :   'О нас'
+        title       :   'О нас',
+        isAbout     :   true
     })
 });
 
