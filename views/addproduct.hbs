@@ -1,1 +1,31 @@
-<h1>Добавить товар</h1>
+<h1 class="">Добавить товар</h1>
+<div class="row">
+    <form class="col s12" action="/addproduct" method="POST">
+        <div class="row">
+            <div class="input-field col s12">
+                <input id="title" type="text" name="title" class="validate" required>
+                <label for="title">Название товара</label>
+                <span class="helper-text" data-error="Введите название товара"></span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <input id="price" type="text" name="price" class="validate" required>
+                <label for="price">Цена</label>
+                <span class="helper-text" data-error="Укажите стоимость"></span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <input id="img" type="text" name="img" class="validate" required>
+                <label for="img">URL изображения</label>
+                <span class="helper-text" data-error="Предоставте URL изображения"></span>
+            </div>
+        </div>
+        <div class="row">
+            <div class="input-field col s12">
+                <button class="btn">Добавить товар</button>
+            </div>
+        </div>
+    </form>
+</div>
