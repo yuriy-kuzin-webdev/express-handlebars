@@ -4,6 +4,11 @@ const PORT      = process.env.PORT || 3002
 
 const handlebars= require('express-handlebars');
 
+const homeRouter        = require('./routes/home');
+const productsRouter    = require('./routes/products');
+const addProductRouter  = require('./routes/addproduct');
+const aboutRouter       = require('./routes/about');
+
 const hbs       = handlebars.create({
     defaultLayout   :   'main',
     extname         :   'hbs',
@@ -15,33 +20,9 @@ app.engine('hbs', hbs.engine);
 app.set('view engine', 'hbs');
 app.set('views', 'views');
 
-
-app.get('/', (req,res)=>{
-    res.render('index', {
-        title       :   'Главная страница',
-        isHome      :   true
-    })
-});
-
-app.get('/products', (req,res)=>{
-    res.render('products', {
-        title       :   'Товары',
-        isProducts  :   true
-    })
-});
-
-app.get('/addproduct', (req,res)=>{
-    res.render('addproduct', {
-        title       :   'Добавление товара',
-        isAddProduct:   true
-    })
-});
-
-app.get('/about', (req,res)=>{
-    res.render('about', {
-        title       :   'О нас',
-        isAbout     :   true
-    })
-});
+app.use('/', homeRouter);
+app.use('/products', productsRouter);
+app.use('/addproduct', addProductRouter);
+app.use('/about', aboutRouter);
 
 app.listen(PORT, console.log(`Server is running on port ${PORT}`));
