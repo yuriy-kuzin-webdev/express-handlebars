@@ -12,6 +12,11 @@ class Product
         this.id     = uuid();
     }
 
+    static async getById(id) {
+        const p = await Product.getAll()
+        return p.find(c => c.id === id)
+      }
+
     static getAll()
     {
         return new Promise( (resolve, reject) => {
