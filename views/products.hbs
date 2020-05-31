@@ -1,1 +1,24 @@
 <h1>Товары</h1>
+{{#if products.length}}
+{{#each products}}
+<div class="row">
+    <div class="col s3 offset-s4">
+        <div class="card">
+            <div class="card-image">
+                <img src="{{img}}" alt="{{title}}">
+            </div>
+            <div class="card-content">
+                <span class="card-title">{{title}}</span>
+                <p class="price">{{price}}</p>
+            </div>
+            <div class="card-action actions">
+                <a href="" target="_blank">Открыть </a>
+                <a href="">Редактировать</a>
+            </div>
+        </div>
+    </div>
+</div>
+{{/each}}
+{{else}}
+<p>Пусто тут</p>
+{{/if}}
